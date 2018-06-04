@@ -1,4 +1,9 @@
-<?php foreach(confession()->list("Id!=0 order by Id desc") as $row) {
+<?php
+$c = (isset($_GET['c']) && $_GET['c'] != '') ? 'and category="' . $_GET['c'] .'"' : '';
+
+?>
+
+<?php foreach(confession()->list("Id!=0 $c order by Id desc") as $row) {
 ?>
     <div class="col-lg-4 col-md-6 col-sm-6">
         <div class="card card-stats">
