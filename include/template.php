@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="include/templates/assets/img/apple-icon.png">
+    <link rel="icon" href="include/templates/assets/img/favicon.png">
+    <title>
+        Online Confessions and Secrets
+    </title>
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="include/templates/assets/css/material-dashboard.css?v=2.0.0">
+    <!-- Documentation extras -->
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="include/templates/assets/assets-for-demo/demo.css" rel="stylesheet" />
+    <!-- iframe removal -->
+</head>
+
+<body class="">
+    <div class="wrapper">
+        <div class="sidebar" data-color="purple" data-background-color="white" data-image="include/templates/assets/img/sidebar-1.jpg">
+            <!--
+        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+        Tip 2: you can also add an image using data-image tag
+    -->
+            <div class="logo">
+                <a href="index.php" class="simple-text logo-normal">
+                    PH Confession
+                </a>
+            </div>
+            <div class="sidebar-wrapper">
+                <ul class="nav">
+                    <li class="nav-item active ">
+                        <a class="nav-link" href="">
+                            <i class="material-icons">dashboard</i>
+                            <p>Confessions</p>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="">
+                            <i class="material-icons">person</i>
+                            <p>A Dream</p>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="">
+                            <i class="material-icons">content_paste</i>
+                            <p>A Fantasy</p>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="">
+                            <i class="material-icons">library_books</i>
+                            <p>A First Experience</p>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="">
+                            <i class="material-icons">bubble_chart</i>
+                            <p>A Guilt</p>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="">
+                            <i class="material-icons">location_ons</i>
+                            <p>A Lie</p>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="">
+                            <i class="material-icons">notifications</i>
+                            <p>A Pain</p>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="">
+                            <i class="material-icons">notifications</i>
+                            <p>A Truth</p>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="">
+                            <i class="material-icons">notifications</i>
+                            <p>A Wild Experience</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-panel">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute fixed-top">
+                <div class="container-fluid">
+                    <div class="navbar-wrapper">
+                        <a class="navbar-brand" href="">Online Confessions and Secrets</a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="navbar-toggler-icon icon-bar"></span>
+                        <span class="navbar-toggler-icon icon-bar"></span>
+                        <span class="navbar-toggler-icon icon-bar"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navigation">
+                        <form class="navbar-form">
+                            <div class="input-group no-border">
+                                <input type="text" value="" class="form-control" placeholder="Search...">
+                                <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                                    <i class="material-icons">search</i>
+                                    <div class="ripple-container"></div>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+            <!-- End Navbar -->
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+<!--End here-->
+
+
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="card card-stats">
+                                <div class="card-header card-header-success card-header-icon">
+                                    <div class="card-icon" style="height:10px">
+                                        A Dream
+                                    </div>
+                                    <p class="card-category">3 hours ago</p>
+                                    <p style="color:black;text-align:justify">
+                                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                    </p>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                        <i class="material-icons">favorite</i>
+                                        <a href="#pablo">Like</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="card card-stats">
+                                <div class="card-header card-header-danger card-header-icon">
+                                    <div class="card-icon" style="height:10px">
+                                        A Dream
+                                    </div>
+                                    <p class="card-category">3 hours ago</p>
+                                    <p style="color:black;text-align:justify">
+                                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                    </p>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                        <i class="material-icons">favorite</i>
+                                        <a href="#pablo">Like</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="card card-stats">
+                                <div class="card-header card-header-info card-header-icon">
+                                    <div class="card-icon" style="height:10px">
+                                        A Dream
+                                    </div>
+                                    <p class="card-category">3 hours ago</p>
+                                    <p style="color:black;text-align:justify">
+                                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                    </p>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                        <i class="material-icons">favorite</i>
+                                        <a href="#pablo">Like</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="card card-stats">
+                                <div class="card-header card-header-warning card-header-icon">
+                                    <div class="card-icon" style="height:10px">
+                                        A Dream
+                                    </div>
+                                    <p class="card-category">3 hours ago</p>
+                                    <p style="color:black;text-align:justify">
+                                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                    </p>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                        <i class="material-icons">favorite</i>
+                                        <a href="#pablo">Like</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="card card-stats">
+                                <div class="card-header card-header-warning card-header-icon">
+                                    <div class="card-icon" style="height:10px">
+                                        A Dream
+                                    </div>
+                                    <p class="card-category">3 hours ago</p>
+                                    <p style="color:black;text-align:justify">
+                                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                    </p>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                        <i class="material-icons">favorite</i>
+                                        <a href="#pablo">Like</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+<!--End here-->
+                    </div>
+                </div>
+            </div>
+            <footer class="footer ">
+                <div class="container-fluid">
+                    <nav class="pull-left">
+                        <ul>
+                            <li>
+                                <a href="https://www.creative-tim.com">
+                                    Creative Tim
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://presentation.creative-tim.com">
+                                    About Us
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://blog.creative-tim.com">
+                                    Blog
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.creative-tim.com/license">
+                                    Licenses
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="copyright pull-right">
+                        &copy;
+                        <script>
+                            document.write(new Date().getFullYear())
+                        </script>, made with love by
+                        <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+<!--   Core JS Files   -->
+<script src="include/templates/assets/js/core/jquery.min.js"></script>
+<script src="include/templates/assets/js/core/popper.min.js"></script>
+<script src="include/templates/assets/js/bootstrap-material-design.js"></script>
+<script src="include/templates/assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+<!--  Charts Plugin, full documentation here: https://gionkunz.github.io/chartist-js/ -->
+<script src="include/templates/assets/js/plugins/chartist.min.js"></script>
+<!-- Library for adding dinamically elements -->
+<script src="include/templates/assets/js/plugins/arrive.min.js" type="text/javascript"></script>
+<!--  Notifications Plugin, full documentation here: http://bootstrap-notify.remabledesigns.com/    -->
+<script src="include/templates/assets/js/plugins/bootstrap-notify.js"></script>
+<!-- Material Dashboard Core initialisations of plugins and Bootstrap Material Design Library -->
+<script src="include/templates/assets/js/material-dashboard.js?v=2.0.0"></script>
+<!-- demo init -->
+<script src="include/templates/assets/js/plugins/demo.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        //init wizard
+
+        // demo.initMaterialWizard();
+
+        // Javascript method's body can be found in assets/js/demos.js
+        demo.initDashboardPageCharts();
+
+        demo.initCharts();
+
+    });
+</script>
+<!--
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ -->
+
+</html>
