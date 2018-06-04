@@ -42,10 +42,12 @@
                             <p>Confessions</p>
                         </a>
                     </li>
-
+                    <li class="nav-item active">
+                      <a class="nav-link" href='?view=confess'>Click here to confess</a>
+                    </li>
                     <?php foreach(category() as $row) {
                     ?>
-                      <li class="nav-item ">
+                      <li class="nav-item">
                           <a class="nav-link" href="index.php?c=<?=$row;?>">
                               <p><?=$row;?></p>
                             </a>
@@ -61,7 +63,7 @@
             <nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute fixed-top">
                 <div class="container-fluid">
                     <div class="navbar-wrapper">
-                        <a class="navbar-brand" href="?view=confess">Confess Here</a>
+                        <a>Online Confessions and Secrets</a>
                     </div>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="sr-only">Toggle navigation</span>

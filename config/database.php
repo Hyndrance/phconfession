@@ -5,6 +5,7 @@ class Database
     private static $dbHost = 'localhost' ;
     private static $dbUsername = 'root';
     private static $dbUserPassword = '';
+    private static $port = '';
 
     private static $cont  = null;
 
@@ -19,7 +20,7 @@ class Database
        {
         try
         {
-          self::$cont =  new PDO( "mysql:host=".self::$dbHost.";"."dbname=".self::$dbName, self::$dbUsername, self::$dbUserPassword);
+          self::$cont =  new PDO( "mysql:host=".self::$dbHost.";port=".self::$port.";"."dbname=".self::$dbName, self::$dbUsername, self::$dbUserPassword);
         }
         catch(PDOException $e)
         {
