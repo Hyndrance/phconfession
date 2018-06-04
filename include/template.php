@@ -42,54 +42,17 @@
                             <p>Confessions</p>
                         </a>
                     </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="">
-                            <i class="material-icons">person</i>
-                            <p>A Dream</p>
-                        </a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="">
-                            <i class="material-icons">content_paste</i>
-                            <p>A Fantasy</p>
-                        </a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="">
-                            <i class="material-icons">library_books</i>
-                            <p>A First Experience</p>
-                        </a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="">
-                            <i class="material-icons">bubble_chart</i>
-                            <p>A Guilt</p>
-                        </a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="">
-                            <i class="material-icons">location_ons</i>
-                            <p>A Lie</p>
-                        </a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="">
-                            <i class="material-icons">notifications</i>
-                            <p>A Pain</p>
-                        </a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="">
-                            <i class="material-icons">notifications</i>
-                            <p>A Truth</p>
-                        </a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="">
-                            <i class="material-icons">notifications</i>
-                            <p>A Wild Experience</p>
-                        </a>
-                    </li>
+
+                    <?php foreach(category() as $row) {
+                    ?>
+                      <li class="nav-item ">
+                          <a class="nav-link" href="">
+                              <p><?=$row;?></p>
+                            </a>
+                          </li>
+                    <?php } ?>
+
+
                 </ul>
             </div>
         </div>
@@ -98,7 +61,7 @@
             <nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute fixed-top">
                 <div class="container-fluid">
                     <div class="navbar-wrapper">
-                        <a class="navbar-brand" href="">Online Confessions and Secrets</a>
+                        <a class="navbar-brand" href="?view=confess">Confess Here</a>
                     </div>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="sr-only">Toggle navigation</span>
@@ -126,111 +89,7 @@
 <!--End here-->
 
 
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="card card-stats">
-                                <div class="card-header card-header-success card-header-icon">
-                                    <div class="card-icon" style="height:10px">
-                                        A Dream
-                                    </div>
-                                    <p class="card-category">3 hours ago</p>
-                                    <p style="color:black;text-align:justify">
-                                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                    </p>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="stats">
-                                        <i class="material-icons">favorite</i>
-                                        <a href="#pablo">Like</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="card card-stats">
-                                <div class="card-header card-header-danger card-header-icon">
-                                    <div class="card-icon" style="height:10px">
-                                        A Dream
-                                    </div>
-                                    <p class="card-category">3 hours ago</p>
-                                    <p style="color:black;text-align:justify">
-                                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                    </p>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="stats">
-                                        <i class="material-icons">favorite</i>
-                                        <a href="#pablo">Like</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="card card-stats">
-                                <div class="card-header card-header-info card-header-icon">
-                                    <div class="card-icon" style="height:10px">
-                                        A Dream
-                                    </div>
-                                    <p class="card-category">3 hours ago</p>
-                                    <p style="color:black;text-align:justify">
-                                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                    </p>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="stats">
-                                        <i class="material-icons">favorite</i>
-                                        <a href="#pablo">Like</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="card card-stats">
-                                <div class="card-header card-header-warning card-header-icon">
-                                    <div class="card-icon" style="height:10px">
-                                        A Dream
-                                    </div>
-                                    <p class="card-category">3 hours ago</p>
-                                    <p style="color:black;text-align:justify">
-                                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                    </p>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="stats">
-                                        <i class="material-icons">favorite</i>
-                                        <a href="#pablo">Like</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="card card-stats">
-                                <div class="card-header card-header-warning card-header-icon">
-                                    <div class="card-icon" style="height:10px">
-                                        A Dream
-                                    </div>
-                                    <p class="card-category">3 hours ago</p>
-                                    <p style="color:black;text-align:justify">
-                                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                    </p>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="stats">
-                                        <i class="material-icons">favorite</i>
-                                        <a href="#pablo">Like</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-
+        <?php include $content;?>
 
 <!--End here-->
                     </div>
@@ -241,22 +100,22 @@
                     <nav class="pull-left">
                         <ul>
                             <li>
-                                <a href="https://www.creative-tim.com">
-                                    Creative Tim
+                                <a href="">
+                                    Hyndrance
                                 </a>
                             </li>
                             <li>
-                                <a href="http://presentation.creative-tim.com">
+                                <a href="">
                                     About Us
                                 </a>
                             </li>
                             <li>
-                                <a href="http://blog.creative-tim.com">
+                                <a href="">
                                     Blog
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.creative-tim.com/license">
+                                <a href="">
                                     Licenses
                                 </a>
                             </li>
@@ -267,7 +126,7 @@
                         <script>
                             document.write(new Date().getFullYear())
                         </script>, made with love by
-                        <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
+                        <a href="" target="_blank">Hyndrance</a> for a better web.
                     </div>
                 </div>
             </footer>

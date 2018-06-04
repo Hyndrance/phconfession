@@ -6,9 +6,9 @@ $view = (isset($_GET['view']) && $_GET['view'] != '') ? $_GET['view'] : '';
 
 switch ($view) {
 
-	case 'home' :
-		$content 	= 'home.php';
-		$template	= '../include/template_homepage.php';
+	case 'confess' :
+		$content 	= 'pages/confess.php';
+		$template	= 'include/template.php';
 		break;
 
 	default :
