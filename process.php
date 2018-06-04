@@ -19,6 +19,7 @@ function confess()
 
 		$confession = confession();
 		$confession->obj = $_POST;
+		$confession->obj['datetime'] = 'NOW()';
 		$confession->create();
 
 		header('Location: index.php');
