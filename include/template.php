@@ -42,18 +42,34 @@
                             <p>Confessions</p>
                         </a>
                     </li>
-                    <li class="nav-item active">
-                      <a class="nav-link" href='?view=confess'>Click here to confess</a>
-                    </li>
-                    <?php foreach(category() as $row) {
-                    ?>
-                      <li class="nav-item">
-                          <a class="nav-link" href="index.php?c=<?=$row;?>">
-                              <p><?=$row;?></p>
-                            </a>
-                          </li>
-                    <?php } ?>
 
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php?view=category">
+                            <i class="material-icons">dashboard</i>
+                            <p>Categories</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php?view=confess">
+                            <i class="material-icons">dashboard</i>
+                            <p>Write your confession</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php">
+                            <i class="material-icons">dashboard</i>
+                            <p>About PH Confession</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php">
+                            <i class="material-icons">dashboard</i>
+                            <p>Contact Us</p>
+                        </a>
+                    </li>
 
                 </ul>
             </div>

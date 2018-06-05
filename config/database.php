@@ -20,7 +20,7 @@ class Database
        {
         try
         {
-          self::$cont =  new PDO( "mysql:host=".self::$dbHost.";port=".self::$port.";"."dbname=".self::$dbName, self::$dbUsername, self::$dbUserPassword);
+          self::$cont =  new PDO("mysql:host=".self::$dbHost.";port=".self::$port.";"."dbname=".self::$dbName, self::$dbUsername, self::$dbUserPassword);
         }
         catch(PDOException $e)
         {

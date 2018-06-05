@@ -12,6 +12,7 @@ function category() {
 	$cat[6] = 'A Pain';
 	$cat[7] = 'A Truth';
 	$cat[8] = 'A Wild Experience';
+	$cat[9] = 'A Regret';
 	return $cat;
 }
 

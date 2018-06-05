@@ -11,6 +11,16 @@ switch ($view) {
 		$template	= 'include/template.php';
 		break;
 
+	case 'category' :
+		$content 	= 'pages/category.php';
+		$template	= 'include/template.php';
+		break;
+
+	case 'display' :
+		$content 	= 'pages/display.php';
+		$template	= 'include/template.php';
+		break;
+
 	default :
 		$content 	= 'pages/home.php';
 		$template	= 'include/template.php';

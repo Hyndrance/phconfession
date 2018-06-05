@@ -11,6 +11,10 @@ switch ($action) {
 		confess();
 		break;
 
+	case 'view' :
+		view();
+		break;
+
 	default :
 }
 
@@ -23,7 +27,19 @@ function confess()
 		$confession->create();
 
 		header('Location: index.php');
+}
 
+function view()
+{
+	$Id=$_GET['id'];
+
+	$get = confession()->get("Id='$Id'");
+
+	$confession = confession();
+	$confession->obj['view'] = $get->view + 1;
+	$confession->update("Id='$Id'");
+
+	header('Location: index.php?view=display&id='.$Id);
 }
 
 ?>

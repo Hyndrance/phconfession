@@ -7,7 +7,13 @@
         <div class="card-body">
             <form method="POST" action="process.php?action=confess">
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="bmd-label-floating">Title</label>
+                            <input type="text" name="title" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
                         <div class="form-group">
                             <label class="bmd-label-floating">Select Category</label>
                             <select class="form-control" name="category">
