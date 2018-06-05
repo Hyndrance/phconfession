@@ -3,7 +3,7 @@
 ?>
 <?php foreach(confession()->list("Id!=0 $c order by Id desc") as $row) {
   // This is to limit the message and add ...
-  $limtMessage = strlen($row->message) > 200 ? substr($row->message,0,200)."..." : $row->message;
+  $limitMessage = strlen($row->message) > 200 ? substr($row->message,0,200)."..." : $row->message;
 ?>
   <div class="col-lg-4 col-md-6 col-sm-6">
       <div class="card card-stats">
@@ -15,13 +15,13 @@
               <p class="card-category">3 hours ago</p>
               <p style="color:black;text-align:justify;font-weight:bold;"><?=$row->title;?></p>
               <p style="color:black;text-align:justify">
-                  <?=$limtMessage;?>
+                  <?=$limitMessage;?>
               </p>
           </div>
           <div class="card-footer">
-              <div class="stats">
+              <div class="stats" onclick="loadDoc_<?=$row->Id;?>()">
                   <i class="material-icons">favorite</i>
-                  <a href="#"> 5 Relates</a>
+                  <span id="relate_<?=$row->Id;?>"><?=$row->relate;?> </span>&nbsp;Relates
               </div>
 
               <div class="stats">
@@ -33,8 +33,17 @@
                   <i class="material-icons">visibility</i>
                   <?=$row->view;?> views
               </div>
-
           </div>
       </div>
   </div>
+   <script>
+       function loadDoc_<?=$row->Id?>() {
+         var xhttp = new XMLHttpRequest();
+           xhttp.open("GET", "process.php?action=relate&id=<?=$row->Id?>", true);
+           xhttp.send();
+
+           var relate = document.getElementById("relate_<?=$row->Id;?>").innerHTML;
+           document.getElementById("relate_<?=$row->Id;?>").textContent= Number(relate) + 1;
+       }
+        </script>
 <?php } ?>

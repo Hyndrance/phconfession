@@ -15,6 +15,10 @@ switch ($action) {
 		view();
 		break;
 
+	case 'relate' :
+		relate();
+		break;
+
 	default :
 }
 
@@ -40,6 +44,19 @@ function view()
 	$confession->update("Id='$Id'");
 
 	header('Location: index.php?view=display&id='.$Id);
+}
+
+
+function relate()
+{
+	$Id=$_GET['id'];
+
+	$get = confession()->get("Id='$Id'");
+
+	$confession = confession();
+	$confession->obj['relate'] = $get->relate + 1;
+	$confession->update("Id='$Id'");
+
 }
 
 ?>
