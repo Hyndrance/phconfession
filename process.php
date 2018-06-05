@@ -19,6 +19,10 @@ switch ($action) {
 		relate();
 		break;
 
+	case 'contactUs' :
+		contact_us();
+		break;
+
 	default :
 }
 
@@ -46,7 +50,6 @@ function view()
 	header('Location: index.php?view=display&id='.$Id);
 }
 
-
 function relate()
 {
 	$Id=$_GET['id'];
@@ -58,5 +61,17 @@ function relate()
 	$confession->update("Id='$Id'");
 
 }
+
+function contact_us()
+{
+	$email=$_POST['email'];
+	$message=$_POST['message'];
+	$message = 'From: '.$email.', <br>'.$message;
+	sendEmail('phconfession2018@gmail.com', $message);
+
+	header('Location: index.php');
+
+}
+
 
 ?>

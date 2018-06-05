@@ -129,19 +129,17 @@ function uploadMultipleFile($uploadedFile){
 /* Send email */
 function sendEmail($email, $content){
 
-	require_once "../email/swift/lib/swift_required.php";
+	require_once "include/email/swift/lib/swift_required.php";
 
 	$transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, 'ssl')
-										->setUsername('samplehr2k18@gmail.com')
-										->setPassword('smpl2k18');
+										->setUsername('phconfession2018@gmail.com')
+										->setPassword('hyndrance2018');
 
 	$mailer = Swift_Mailer::newInstance($transport);
 
-
-
 	try{
-	 $message = Swift_Message::newInstance("No Reply")
-										->setFrom(array('samplehr2k18@gmail.com' => 'Teamire'))
+	 $message = Swift_Message::newInstance("About Us Message")
+										->setFrom(array('phconfession2018@gmail.com' => 'PhConfession'))
 										->setTo(array($email));
 
 	$message->setBody($content, 'text/html');
@@ -160,6 +158,40 @@ function sendEmail($email, $content){
 	}
 
 
+}
+
+
+/* =====================================Functions===================================== */
+
+/* time elapse */
+
+function timeElapse($datetime, $full = false) {
+    $now = new DateTime;
+    $ago = new DateTime($datetime);
+    $diff = $now->diff($ago);
+
+    $diff->w = floor($diff->d / 7);
+    $diff->d -= $diff->w * 7;
+
+    $string = array(
+        'y' => 'year',
+        'm' => 'month',
+        'w' => 'week',
+        'd' => 'day',
+        'h' => 'hour',
+        'i' => 'minute',
+        's' => 'second',
+    );
+    foreach ($string as $k => &$v) {
+        if ($diff->$k) {
+            $v = $diff->$k . ' ' . $v . ($diff->$k > 1 ? 's' : '');
+        } else {
+            unset($string[$k]);
+        }
+    }
+
+    if (!$full) $string = array_slice($string, 0, 1);
+    return $string ? implode(', ', $string) . ' ago' : 'just now';
 }
 
 ?>

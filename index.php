@@ -21,6 +21,11 @@ switch ($view) {
 		$template	= 'include/template.php';
 		break;
 
+	case 'contactUs' :
+		$content 	= 'pages/contactUs.php';
+		$template	= 'include/template.php';
+		break;
+
 	default :
 		$content 	= 'pages/home.php';
 		$template	= 'include/template.php';

@@ -23,4 +23,11 @@ function confession() {
 	return $crud;
 }
 
+// User Models
+function comment() {
+	$crud = new CRUD;
+	$crud->table = "comment";
+	return $crud;
+}
+
 ?>
