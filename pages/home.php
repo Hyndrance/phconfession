@@ -13,8 +13,6 @@
                   <div style="margin-top:-10px;"><?=$row->category;?></div>
               </div>
               <p class="card-category"><?=timeElapse($row->datetime);?></p>
-              <p class="card-category"><?=$row->datetime;?></p>
-              <p class="card-category"><?=date("Y-m-d H:i:s");?></p>
               <p style="color:black;text-align:justify;font-weight:bold;"><?=$row->title;?></p>
               <p style="color:black;text-align:justify">
                   <?=$limitMessage;?>
