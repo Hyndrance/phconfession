@@ -21,7 +21,7 @@
               </p>
           </div>
           <div class="card-footer">
-              <?php if (relate()->count("cId=$row->Id and alias=$alias") == 0) {?>
+              <?php if (relate()->count("cId=$row->Id and alias='$alias'") == 0) {?>
                 <div class="stats" id="onclick_<?=$row->Id;?>" onclick="loadDoc_<?=$row->Id;?>()">
                       <i class="material-icons" id="icon_<?=$row->Id;?>">favorite_border</i>
                       <span id="relate_<?=$row->Id;?>"><?=relate()->count("cId=$row->Id");?> </span>&nbsp;Relates
