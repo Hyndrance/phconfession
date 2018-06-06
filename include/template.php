@@ -77,6 +77,13 @@ if(!isset($_SESSION["alias_session"]))
                         </a>
                     </li>
 
+                    <li class="nav-item">
+                        <a class="nav-link" href="process.php?action=logout">
+                            <i class="material-icons">dashboard</i>
+                            <p>Change Alias</p>
+                        </a>
+                    </li>
+
                 </ul>
             </div>
         </div>

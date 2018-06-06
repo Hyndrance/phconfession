@@ -34,7 +34,7 @@
 
               <div class="stats">
                   <i class="material-icons">chat</i>
-                  <?=$row->view;?> comments
+                  <?=comment()->count("cId=$row->Id");?> comments
               </div>
 
               <div class="stats">

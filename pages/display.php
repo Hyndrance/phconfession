@@ -27,16 +27,18 @@ $conf = confession()->get("Id=$Id");
           <ul style="color:black;text-align:justify">
             <?php foreach(comment()->list("cId=$Id") as $row) {?>
               <li> <div class="timeline-heading">
-                <span class="badge badge-pill badge-success"><?=timeElapse($row->datetime);?></span>
-              </div> <?=$row->comment;?></li>
+                <span class="badge badge-pill badge-success"><?=$row->alias;?></span>
+              </div> <?=$row->comment;?> <span style="color:gray;font-weight:bold;font-style:italic;">-<?=timeElapse($row->datetime);?></span></li>
             <?php } ?>
           </ul>
 
+					<form method="post" action="process.php?action=comment&id=<?=$conf->Id;?>">
               <div class="col-md-12">
                   <div class="form-group">
                       <label class="bmd-label-floating">Leave a comment here</label>
                       <input type="text" name="comment" class="form-control">
                   </div>
+									<button type="submit" class="btn btn-primary pull-right">Submit Comment</button>
               </div>
 
   </div>

@@ -27,6 +27,14 @@ switch ($action) {
 		register();
 		break;
 
+	case 'comment' :
+		add_comment();
+		break;
+
+	case 'logout' :
+		logout();
+		break;
+
 	default :
 }
 
@@ -66,6 +74,21 @@ function add_relate()
 
 }
 
+function add_comment()
+{
+	$Id=$_GET['id'];
+
+	$comment = comment();
+	$comment->obj['cId'] = $Id;
+	$comment->obj['alias'] = $_SESSION['alias_session'];
+	$comment->obj['comment'] = $_POST['comment'];
+	$comment->obj['datetime'] = "NOW()";
+	$comment->create();
+
+	header('Location: index.php?view=display&id='.$Id);
+
+}
+
 function contact_us()
 {
 	$email=$_POST['email'];
@@ -85,5 +108,14 @@ function register()
 
 }
 
+function logout()
+
+{
+	//logout.php
+session_start();
+session_destroy();
+header('Location: index.php');
+	exit;
+}
 
 ?>
