@@ -15,12 +15,16 @@ switch ($action) {
 		view();
 		break;
 
-	case 'relate' :
-		relate();
+	case 'add_relate' :
+		add_relate();
 		break;
 
 	case 'contactUs' :
 		contact_us();
+		break;
+
+	case 'register' :
+		register();
 		break;
 
 	default :
@@ -31,6 +35,7 @@ function confess()
 
 		$confession = confession();
 		$confession->obj = $_POST;
+		$confession->obj['alias'] = $_SESSION['alias_session'];
 		$confession->obj['datetime'] = 'NOW()';
 		$confession->create();
 
@@ -50,15 +55,14 @@ function view()
 	header('Location: index.php?view=display&id='.$Id);
 }
 
-function relate()
+function add_relate()
 {
 	$Id=$_GET['id'];
 
-	$get = confession()->get("Id='$Id'");
-
-	$confession = confession();
-	$confession->obj['relate'] = $get->relate + 1;
-	$confession->update("Id='$Id'");
+	$relate = relate();
+	$relate->obj['cId'] = $Id;
+	$relate->obj['alias'] = $_SESSION['alias_session'];
+	$relate->create();
 
 }
 
@@ -68,6 +72,14 @@ function contact_us()
 	$message=$_POST['message'];
 	$message = 'From: '.$email.', <br>'.$message;
 	sendEmail('phconfession2018@gmail.com', $message);
+
+	header('Location: index.php');
+
+}
+
+function register()
+{
+	$_SESSION['alias_session'] = $_POST['alias'];
 
 	header('Location: index.php');
 

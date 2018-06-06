@@ -1,3 +1,9 @@
+<?php
+if(!isset($_SESSION["alias_session"]))
+{
+		header('Location: index.php?view=register');
+ }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -180,40 +186,5 @@
 
     });
 </script>
-<!--
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- -->
 
 </html>

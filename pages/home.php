@@ -15,14 +15,22 @@
               <p class="card-category"><?=timeElapse($row->datetime);?></p>
               <p style="color:black;text-align:justify;font-weight:bold;"><?=$row->title;?></p>
               <p style="color:black;text-align:justify">
-                  <?=$limitMessage;?>
+                  <?=$limitMessage;?> <br>
+                  <div style="color:gray;font-weight:bold;font-style:italic;">- <?=$row->alias;?></div>
               </p>
           </div>
           <div class="card-footer">
-              <div class="stats" onclick="loadDoc_<?=$row->Id;?>()">
-                  <i class="material-icons">favorite</i>
-                  <span id="relate_<?=$row->Id;?>"><?=$row->relate;?> </span>&nbsp;Relates
-              </div>
+              <?php if (relate()->count("cId=$row->Id") == 0) {?>
+                <div class="stats" id="onclick_<?=$row->Id;?>" onclick="loadDoc_<?=$row->Id;?>()">
+                      <i class="material-icons" id="icon_<?=$row->Id;?>">favorite_border</i>
+                      <span id="relate_<?=$row->Id;?>"><?=relate()->count("cId=$row->Id");?> </span>&nbsp;Relates
+                  </div>
+              <?php } else { ?>
+                <div class="stats">
+                    <i class="material-icons">favorite</i>
+                    <span id="relate_<?=$row->Id;?>"><?=relate()->count("cId=$row->Id");?> </span>&nbsp;Relates
+                </div>
+              <?php } ?>
 
               <div class="stats">
                   <i class="material-icons">chat</i>
@@ -39,11 +47,16 @@
    <script>
        function loadDoc_<?=$row->Id?>() {
          var xhttp = new XMLHttpRequest();
-           xhttp.open("GET", "process.php?action=relate&id=<?=$row->Id?>", true);
+           xhttp.open("GET", "process.php?action=add_relate&id=<?=$row->Id?>", true);
            xhttp.send();
 
            var relate = document.getElementById("relate_<?=$row->Id;?>").innerHTML;
+           // Add one relate
            document.getElementById("relate_<?=$row->Id;?>").textContent= Number(relate) + 1;
+           // Add one relate
+           document.getElementById("icon_<?=$row->Id;?>").textContent= 'favorite';
+           // disable onclick
+           document.getElementById("onclick_<?=$row->Id;?>").onclick="";
        }
         </script>
 <?php } ?>

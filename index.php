@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once("config/database.php");
 include_once("config/Models.php");
 
@@ -24,6 +25,11 @@ switch ($view) {
 	case 'contactUs' :
 		$content 	= 'pages/contactUs.php';
 		$template	= 'include/template.php';
+		break;
+
+	case 'register' :
+		$content 	= 'pages/register.php';
+		$template	= 'include/blank.php';
 		break;
 
 	default :

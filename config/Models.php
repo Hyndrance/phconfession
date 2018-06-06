@@ -29,5 +29,11 @@ function comment() {
 	$crud->table = "comment";
 	return $crud;
 }
+// User Models
+function relate() {
+	$crud = new CRUD;
+	$crud->table = "relate";
+	return $crud;
+}
 
 ?>
