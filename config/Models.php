@@ -4,16 +4,33 @@ include "CRUD.php";
 // User Models
 function category() {
 	$cat = array();
-	$cat[1] = 'A Dream';
-	$cat[2] = 'A Fantasy';
-	$cat[3] = 'A First Experience';
-	$cat[4] = 'A Guilt';
-	$cat[5] = 'A Lie';
+	$cat[1] = 'My weird dream';
+	$cat[2] = 'What I fantasize';
+	$cat[3] = 'First time and unforgettable';
+	$cat[4] = 'My guilt';
+	$cat[5] = 'What I lie about';
 	$cat[6] = 'A Pain';
-	$cat[7] = 'A Truth';
-	$cat[8] = 'A Wild Experience';
-	$cat[9] = 'A Regret';
+	$cat[7] = 'What the truth is';
+	$cat[8] = 'My wild experience';
+	$cat[9] = 'A regret';
+	$cat[10] = 'Just saying';
 	return $cat;
+}
+
+// button colers
+function button_color() {
+	$head_color = array();
+	$head_color[1] = 'background:#fc9209;color:white;';
+	$head_color[2] = 'background:#51ab55;color:white;';
+	$head_color[3] = 'background:#e94440;color:white;';
+	$head_color[4] = 'background:#0ab3c7;color:white;';
+	$head_color[5] = 'background:#9c27b0;color:white;';
+	$head_color[6] = 'background:#009688;color:white;';
+	$head_color[7] = 'background:#3f51b5;color:white;';
+	$head_color[8] = 'background:#e91e63;color:white;';
+	$head_color[9] = 'background:#f16695;color:white;';
+	$head_color[10] = 'background:#9c27b0;color:white;';
+	return $head_color;
 }
 
 // User Models

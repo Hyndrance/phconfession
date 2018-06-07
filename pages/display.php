@@ -36,9 +36,9 @@ $conf = confession()->get("Id=$Id");
               <div class="col-md-12">
                   <div class="form-group">
                       <label class="bmd-label-floating">Leave a comment here</label>
-                      <input type="text" name="comment" class="form-control">
+                      <input type="text" name="comment" class="form-control" required>
                   </div>
-									<button type="submit" class="btn btn-primary pull-right">Submit Comment</button>
+									<button type="submit" class="btn btn-primary pull-right"  style="<?=button_color()[6]?>">Submit Comment</button>
               </div>
 
   </div>

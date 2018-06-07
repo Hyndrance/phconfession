@@ -42,8 +42,8 @@ if(!isset($_SESSION["alias_session"]))
             </div>
             <div class="sidebar-wrapper">
                 <ul class="nav">
-                    <li class="nav-item active ">
-                        <a class="nav-link" href="index.php">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.php"  style="<?=button_color()[6]?>">
                             <i class="material-icons">dashboard</i>
                             <p>Confessions</p>
                         </a>

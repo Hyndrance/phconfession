@@ -1,6 +1,6 @@
 <div class="col-md-12">
     <div class="card">
-        <div class="card-header card-header-primary">
+        <div class="card-header card-header-primary"  style="<?=button_color()[6]?>">
             <h4 class="card-title">Help up improve</h4>
             <p class="card-category">Please give us any suggestions or comments on the PH Confession. Do not worry, we are open to your suggestions</p>
         </div>
@@ -24,7 +24,7 @@
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary pull-right">Submit</button>
+                <button type="submit" class="btn btn-primary pull-right"   style="<?=button_color()[6]?>">Submit</button>
                 <div class="clearfix"></div>
             </form>
         </div>

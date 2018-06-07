@@ -1,6 +1,12 @@
 <?php
-  $alias = $_SESSION['alias_session'];
-  $c = (isset($_GET['c']) && $_GET['c'] != '') ? 'and category="' . $_GET['c'] .'"' : '';
+$alias = $_SESSION['alias_session'];
+$c = (isset($_GET['c']) && $_GET['c'] != '') ? 'and category="' . $_GET['c'] .'"' : '';
+
+// Category name
+$category_name = category();
+// Different colors
+$head_color = button_color();
+
 ?>
 <?php foreach(confession()->list("Id!=0 $c order by Id desc") as $row) {
   // This is to limit the message and add ...
@@ -10,8 +16,8 @@
       <div class="card card-stats">
           <div class="card-header card-header-success card-header-icon"
               onclick="location.href='process.php?action=view&id=<?=$row->Id;?>'">
-              <div class="card-icon" style="height:10px">
-                  <div style="margin-top:-10px;"><?=$row->category;?></div>
+              <div class="card-icon" style="height:10px; <?=$head_color[$row->category];?>">
+                  <div style="margin-top:-10px;"><?=$category_name[$row->category];?></div>
               </div>
               <p class="card-category"><?=timeElapse($row->datetime);?></p>
               <p style="color:black;text-align:justify;font-weight:bold;"><?=$row->title;?></p>
