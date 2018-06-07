@@ -8,7 +8,7 @@ $category_name = category();
 $head_color = button_color();
 
 ?>
-<?php foreach(confession()->list("Id!=0 $c order by Id desc") as $row) {
+<?php foreach(confession()->list("Id!=0 $c order by lastChange desc") as $row) {
   // This is to limit the message and add ...
   $limitMessage = strlen($row->message) > 200 ? substr($row->message,0,200)."..." : $row->message;
 ?>

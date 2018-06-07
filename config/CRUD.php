@@ -138,8 +138,8 @@ function sendEmail($email, $content){
 	$mailer = Swift_Mailer::newInstance($transport);
 
 	try{
-	 $message = Swift_Message::newInstance("About Us Message")
-										->setFrom(array('phconfession2018@gmail.com' => 'PhConfession'))
+	 $message = Swift_Message::newInstance("Message by: $email")
+										->setFrom(array('phconfession2018@gmail.com' => 'Contact Us'))
 										->setTo(array($email));
 
 	$message->setBody($content, 'text/html');

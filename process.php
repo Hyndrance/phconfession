@@ -38,6 +38,12 @@ switch ($action) {
 	default :
 }
 
+function update_last_change($Id){
+	$confession = confession();
+	$confession->obj['lastChange'] = 'NOW()';
+	$confession->update("Id='$Id'");
+}
+
 function confess()
 {
 
@@ -45,6 +51,7 @@ function confess()
 		$confession->obj = $_POST;
 		$confession->obj['alias'] = $_SESSION['alias_session'];
 		$confession->obj['datetime'] = 'NOW()';
+		$confession->obj['lastChange'] = 'NOW()';
 		$confession->create();
 
 		header('Location: index.php');
@@ -72,6 +79,9 @@ function add_relate()
 	$relate->obj['alias'] = $_SESSION['alias_session'];
 	$relate->create();
 
+	// update last change
+	update_last_change($Id);
+
 }
 
 function add_comment()
@@ -84,6 +94,9 @@ function add_comment()
 	$comment->obj['comment'] = $_POST['comment'];
 	$comment->obj['datetime'] = "NOW()";
 	$comment->create();
+
+	// update last change
+	update_last_change($Id);
 
 	header('Location: index.php?view=display&id='.$Id);
 
@@ -117,5 +130,7 @@ session_destroy();
 header('Location: index.php');
 	exit;
 }
+
+
 
 ?>

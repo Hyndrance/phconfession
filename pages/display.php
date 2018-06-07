@@ -14,7 +14,7 @@ $category_name = category();
           (<?=$category_name[$conf->category];?>)
 				</h5>
         <br>
-				<p style="color:black;text-align:justify">
+				<p style="color:black;text-align:center">
 						<?=$conf->message;?> <br>
 						<div style="color:gray;font-weight:bold;font-style:italic;">- <?=$conf->alias;?></div>
 						<div style="color:gray;font-style:italic;"><?=$conf->location;?></div>
