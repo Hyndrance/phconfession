@@ -24,6 +24,7 @@ $head_color = button_color();
               <p style="color:black;text-align:justify">
                   <?=$limitMessage;?> <br>
                   <div style="color:gray;font-weight:bold;font-style:italic;">- <?=$row->alias;?></div>
+                  <div style="color:gray;font-style:italic;"><?=$row->location;?></div>
               </p>
           </div>
           <div class="card-footer">
@@ -39,7 +40,7 @@ $head_color = button_color();
                 </div>
               <?php } ?>
 
-              <div class="stats">
+              <div class="stats" onclick="location.href='index.php?view=display&id=<?=$row->Id?>#comment'">
                   <i class="material-icons">chat</i>
                   <?=comment()->count("cId=$row->Id");?> comments
               </div>
@@ -67,3 +68,11 @@ $head_color = button_color();
        }
         </script>
 <?php } ?>
+
+<script>
+$(window).scroll(function() {
+    if($(window).scrollTop() == $(document).height() - $(window).height()) {
+           // ajax call get data from server and append to the div
+    }
+});
+</script>

@@ -35,7 +35,15 @@
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary pull-right"  style="<?=button_color()[6]?>">Confess</button>
+                <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                          <label class="bmd-label-floating">Location: (optional)</label>
+                          <input type="text" name="location" class="form-control">
+                      </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary pull-right"  style="<?=button_color()[6]?>">Submit</button>
                 <div class="clearfix"></div>
             </form>
         </div>
