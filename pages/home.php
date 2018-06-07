@@ -1,6 +1,7 @@
 <?php
 $alias = $_SESSION['alias_session'];
 $c = (isset($_GET['c']) && $_GET['c'] != '') ? 'and category="' . $_GET['c'] .'"' : '';
+$s = (isset($_GET['s']) && $_GET['s'] != '') ? 'and (title like "%' . $_GET['s'] .'%" or alias like "%' . $_GET['s'] .'%" or message like "%' . $_GET['s'] .'%")' : '';
 
 // Category name
 $category_name = category();
@@ -8,7 +9,7 @@ $category_name = category();
 $head_color = button_color();
 
 ?>
-<?php foreach(confession()->list("Id!=0 $c order by lastChange desc") as $row) {
+<?php foreach(confession()->list("Id!=0 $c $s order by lastChange desc") as $row) {
   // This is to limit the message and add ...
   $limitMessage = strlen($row->message) > 200 ? substr($row->message,0,200)."..." : $row->message;
 ?>
