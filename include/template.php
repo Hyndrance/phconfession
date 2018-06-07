@@ -52,28 +52,28 @@ if(!isset($_SESSION["alias_session"]))
 
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?view=confess">
-                            <i class="material-icons">dashboard</i>
+                            <i class="material-icons">note_add</i>
                             <p>Write your confession</p>
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href="index.php">
-                            <i class="material-icons">dashboard</i>
+                            <i class="material-icons">touch_app</i>
                             <p>About PH Confession</p>
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?view=contactUs">
-                            <i class="material-icons">dashboard</i>
+                            <i class="material-icons">feedback</i>
                             <p>Contact Us</p>
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href="process.php?action=logout">
-                            <i class="material-icons">dashboard</i>
+                            <i class="material-icons">contacts</i>
                             <p>Change Alias</p>
                         </a>
                     </li>
@@ -100,7 +100,6 @@ if(!isset($_SESSION["alias_session"]))
                                 <input type="text" value="" class="form-control" placeholder="Search...">
                                 <button type="submit" class="btn btn-white btn-round btn-just-icon">
                                     <i class="material-icons">search</i>
-                                    <div class="ripple-container"></div>
                                 </button>
                             </div>
                         </form>
