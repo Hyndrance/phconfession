@@ -109,13 +109,13 @@ if(!isset($_SESSION["alias_session"]))
             <!-- End Navbar -->
             <div class="content">
                 <div class="container-fluid">
+									<!--End here-->
+											 <?php include "message.php";?>
+									<!--End here-->
                     <div class="row">
-<!--End here-->
-
-
-        <?php include $content;?>
-
-<!--End here-->
+											<!--End here-->
+											     <?php include $content;?>
+											<!--End here-->
                     </div>
                 </div>
             </div>

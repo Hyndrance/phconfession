@@ -52,5 +52,11 @@ function relate() {
 	$crud->table = "relate";
 	return $crud;
 }
+// User Models
+function notification() {
+	$crud = new CRUD;
+	$crud->table = "notification";
+	return $crud;
+}
 
 ?>

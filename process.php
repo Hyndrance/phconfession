@@ -35,6 +35,10 @@ switch ($action) {
 		logout();
 		break;
 
+	case 'close_notif' :
+		close_notif();
+		break;
+
 	default :
 }
 
@@ -116,9 +120,12 @@ function contact_us()
 function register()
 {
 	$_SESSION['alias_session'] = $_POST['alias'];
-
 	header('Location: index.php');
+}
 
+function close_notif()
+{
+	$_SESSION['close_notif'] = $_SESSION['alias_session'];
 }
 
 function logout()
