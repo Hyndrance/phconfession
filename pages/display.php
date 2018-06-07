@@ -32,7 +32,8 @@ $category_name = category();
             <?php foreach(comment()->list("cId=$Id") as $row) {?>
               <li> <div class="timeline-heading">
                 <span class="badge badge-pill badge-success"><?=$row->alias;?></span>
-              </div> <?=$row->comment;?> <span style="color:gray;font-weight:bold;font-style:italic;">-<?=timeElapse($row->datetime);?></span></li>
+								<br><span style="color:gray;font-style:italic;font-size:12px;"><?=timeElapse($row->datetime);?></span>
+              </div> <?=$row->comment;?></li>
             <?php } ?>
           </ul>
 

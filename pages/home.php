@@ -12,7 +12,7 @@ $head_color = button_color();
   // This is to limit the message and add ...
   $limitMessage = strlen($row->message) > 200 ? substr($row->message,0,200)."..." : $row->message;
 ?>
-  <div class="col-lg-4 col-md-6 col-sm-6">
+  <div class="col-lg-4 col-md-6 col-sm-6" id="your_div">
       <div class="card card-stats">
           <div class="card-header card-header-success card-header-icon"
               onclick="location.href='process.php?action=view&id=<?=$row->Id;?>'">
@@ -73,6 +73,7 @@ $head_color = button_color();
 $(window).scroll(function() {
     if($(window).scrollTop() == $(document).height() - $(window).height()) {
            // ajax call get data from server and append to the div
+           new_element.hide().appendTo('#your_div').fadeIn(); $(window).scrollTop($(window).scrollTop()-1);
     }
 });
 </script>
