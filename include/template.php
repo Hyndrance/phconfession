@@ -44,6 +44,27 @@ if(!isset($_SESSION["alias_session"]))
                 <ul class="nav">
 
                     <li class="nav-item">
+                        <a class="nav-link" href="index.php">
+                            <i class="material-icons">whatshot</i>
+                            <p>Hot</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php?view=trending">
+                            <i class="material-icons">trending_up</i>
+                            <p>Trending</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php?view=fresh">
+                            <i class="material-icons">open_in_new</i>
+                            <p>Fresh</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
                         <a class="nav-link" href="index.php?view=category">
                             <i class="material-icons">dashboard</i>
                             <p>Categories</p>
@@ -52,7 +73,7 @@ if(!isset($_SESSION["alias_session"]))
 
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?view=confess">
-                            <i class="material-icons">note_add</i>
+                            <i class="material-icons">create</i>
                             <p>Write your confession</p>
                         </a>
                     </li>
@@ -66,7 +87,7 @@ if(!isset($_SESSION["alias_session"]))
 
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?view=contactUs">
-                            <i class="material-icons">feedback</i>
+                            <i class="material-icons">perm_phone_msg</i>
                             <p>Contact Us</p>
                         </a>
                     </li>

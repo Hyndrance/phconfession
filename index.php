@@ -32,8 +32,18 @@ switch ($view) {
 		$template	= 'include/blank.php';
 		break;
 
+	case 'trending' :
+		$content 	= 'pages/trending.php';
+		$template	= 'include/template.php';
+		break;
+
+	case 'fresh' :
+		$content 	= 'pages/fresh.php';
+		$template	= 'include/template.php';
+		break;
+
 	default :
-		$content 	= 'pages/home.php';
+		$content 	= 'pages/hot.php';
 		$template	= 'include/template.php';
 }
 
