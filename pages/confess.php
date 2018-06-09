@@ -5,7 +5,7 @@
             <p class="card-category">Don't worry! I won't find you. I will just listen.</p>
         </div>
         <div class="card-body">
-            <form method="POST" action="process.php?action=confess">
+            <form method="POST" action="process.php?action=confess" autocomplete="off">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">

@@ -27,6 +27,11 @@ switch ($view) {
 		$template	= 'include/template.php';
 		break;
 
+	case 'login' :
+		$content 	= 'pages/login.php';
+		$template	= 'include/blank.php';
+		break;
+
 	case 'register' :
 		$content 	= 'pages/register.php';
 		$template	= 'include/blank.php';

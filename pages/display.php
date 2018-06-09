@@ -37,7 +37,7 @@ $category_name = category();
             <?php } ?>
           </ul>
 
-					<form method="post" action="process.php?action=comment&id=<?=$conf->Id;?>">
+					<form method="post" action="process.php?action=comment&id=<?=$conf->Id;?>" autocomplete="off">
               <div class="col-md-12">
                   <div class="form-group">
                       <label class="bmd-label-floating">Leave a comment here</label>
@@ -45,5 +45,4 @@ $category_name = category();
                   </div>
 									<button type="submit" class="btn btn-primary pull-right"  style="<?=button_color()[6]?>">Submit Comment</button>
               </div>
-
   </div>

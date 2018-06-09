@@ -5,7 +5,7 @@
             <p class="card-category">Please give us any suggestions or comments on the PH Confession. Do not worry, we are open to your suggestions</p>
         </div>
         <div class="card-body">
-            <form method="POST" action="process.php?action=contactUs">
+            <form method="POST" action="process.php?action=contactUs" autocomplete="off">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">

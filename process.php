@@ -27,6 +27,10 @@ switch ($action) {
 		register();
 		break;
 
+	case 'login' :
+		login();
+		break;
+
 	case 'comment' :
 		add_comment();
 		break;
@@ -40,6 +44,51 @@ switch ($action) {
 		break;
 
 	default :
+}
+
+function login()
+{
+	// if we found an error save the error message in this variable
+
+	$alias = $_POST['alias'];
+	$password = $_POST['password'];
+
+	//$result = user()->get("alias='$alias' and password = '".sha1($password)."'");
+	$result = user()->get("alias='$alias' and password = '$password'");
+
+	if ($result){
+		$_SESSION['alias_session'] = $alias;
+		header('Location: index.php');
+	}
+	else {
+			header('Location: index.php?view=login&error=true');
+	}
+}
+
+function register()
+{
+	$alias = $_POST['alias'];
+	$password = $_POST['password'];
+	$password2 = $_POST['password2'];
+
+	$aliasExists = user()->get("alias='$alias'");
+
+	if ($aliasExists){
+		header('Location: index.php?view=register&error=Alias already exists');
+	}
+	else if ($password != $password2){
+		header('Location: index.php?view=register&error=Password not matched');
+	}
+	else {
+			$user = user();
+			$user->obj['alias'] = $alias;
+			$user->obj['password'] = $password;
+			$user->create();
+
+			$_SESSION['alias_session'] = $alias;
+
+			header('Location: index.php');
+	}
 }
 
 function update_last_change($Id){
@@ -115,12 +164,6 @@ function contact_us()
 
 	header('Location: index.php');
 
-}
-
-function register()
-{
-	$_SESSION['alias_session'] = $_POST['alias'];
-	header('Location: index.php');
 }
 
 function close_notif()

@@ -34,6 +34,12 @@ function button_color() {
 }
 
 // User Models
+function user() {
+	$crud = new CRUD;
+	$crud->table = "user";
+	return $crud;
+}
+// User Models
 function confession() {
 	$crud = new CRUD;
 	$crud->table = "confession";

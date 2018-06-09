@@ -1,7 +1,7 @@
 <?php
 if(!isset($_SESSION["alias_session"]))
 {
-		header('Location: index.php?view=register');
+		header('Location: index.php?view=login');
  }
 ?>
 <!DOCTYPE html>
@@ -94,8 +94,8 @@ if(!isset($_SESSION["alias_session"]))
 
                     <li class="nav-item">
                         <a class="nav-link" href="process.php?action=logout">
-                            <i class="material-icons">contacts</i>
-                            <p>Change Alias</p>
+                            <i class="material-icons">remove_circle</i>
+                            <p>Logout</p>
                         </a>
                     </li>
 
