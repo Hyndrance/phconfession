@@ -15,7 +15,7 @@ if(!isset($_SESSION["alias_session"]))
     <link rel="apple-touch-icon" href="include/templates/assets/img/apple-icon.png">
     <link rel="icon" href="include/templates/assets/img/favicon.png">
     <title>
-        Online Confessions and Secrets
+        Get Something off your chest anonymously!
     </title>
     <!--     Fonts and icons     -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
@@ -65,6 +65,13 @@ if(!isset($_SESSION["alias_session"]))
                     </li>
 
                     <li class="nav-item">
+                        <a class="nav-link" href="index.php?view=myconfessions">
+                            <i class="material-icons">drafts</i>
+                            <p>My Confessions</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
                         <a class="nav-link" href="index.php?view=category">
                             <i class="material-icons">dashboard</i>
                             <p>Categories</p>
@@ -107,7 +114,7 @@ if(!isset($_SESSION["alias_session"]))
             <nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute fixed-top">
                 <div class="container-fluid">
                     <div class="navbar-wrapper">
-                        <a>Online Confessions and Secrets</a>
+                        <a>Get Something off your chest anonymously!</a>
                     </div>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="sr-only">Toggle navigation</span>

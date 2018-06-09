@@ -47,6 +47,11 @@ switch ($view) {
 		$template	= 'include/template.php';
 		break;
 
+	case 'myconfessions' :
+		$content 	= 'pages/myconfessions.php';
+		$template	= 'include/template.php';
+		break;
+
 	default :
 		$content 	= 'pages/hot.php';
 		$template	= 'include/template.php';
