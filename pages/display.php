@@ -22,8 +22,10 @@ $category_name = category();
 		</div>
     <div class="card-footer">
         <div class="stats">
-            <i class="material-icons">favorite</i> Relate
-        </div>
+					<br>
+						<iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fphconfession.com%2Findex.php%3Fview%3Ddisplay%26id%3D<?=$conf->Id;?>&layout=button_count&size=small&mobile_iframe=true&width=69&height=20&appId"
+							width="69" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+				</div>
     </div>
 	</div>
 

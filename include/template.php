@@ -13,7 +13,7 @@ if(!isset($_SESSION["alias_session"]))
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <!-- Favicons -->
     <link rel="apple-touch-icon" href="include/templates/assets/img/apple-icon.png">
-    <link rel="icon" href="include/templates/assets/img/favicon.png">
+    <link rel="icon" href="include/img/icon.png">
     <title>
         Get Something off your chest anonymously!
     </title>
@@ -37,7 +37,7 @@ if(!isset($_SESSION["alias_session"]))
     -->
             <div class="logo">
                 <a href="index.php" class="simple-text logo-normal">
-                    PH Confession
+                    <img src="include/img/header.png" height="35px">
                 </a>
             </div>
             <div class="sidebar-wrapper">
@@ -58,9 +58,9 @@ if(!isset($_SESSION["alias_session"]))
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php?view=fresh">
+                        <a class="nav-link" href="index.php?view=latest">
                             <i class="material-icons">open_in_new</i>
-                            <p>Fresh</p>
+                            <p>Latest</p>
                         </a>
                     </li>
 
@@ -114,7 +114,7 @@ if(!isset($_SESSION["alias_session"]))
             <nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute fixed-top">
                 <div class="container-fluid">
                     <div class="navbar-wrapper">
-                        <a>Get Something off your chest anonymously!</a>
+                        <a href=""><?=$title;?></a>
                     </div>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="sr-only">Toggle navigation</span>

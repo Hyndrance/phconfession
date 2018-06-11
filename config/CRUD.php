@@ -14,7 +14,7 @@ class CRUD {
 	        $query_array[] = "$key=$key_value";
 				}
 				else{
-		        $query_array[] = "$key='$key_value'";
+		        $query_array[] = "$key='".htmlspecialchars($key_value, ENT_QUOTES)."'";
 				}
 	    }
 	    return implode( ', ', $query_array );
