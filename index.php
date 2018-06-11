@@ -31,6 +31,12 @@ switch ($view) {
 		$template	= 'include/template.php';
 		break;
 
+	case 'about' :
+		$title = "About PH Confession";
+		$content 	= 'pages/about.php';
+		$template	= 'include/template.php';
+		break;
+
 	case 'login' :
 		$content 	= 'pages/login.php';
 		$template	= 'include/blank.php';

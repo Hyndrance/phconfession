@@ -86,7 +86,7 @@ if(!isset($_SESSION["alias_session"]))
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php">
+                        <a class="nav-link" href="index.php?view=about">
                             <i class="material-icons">touch_app</i>
                             <p>About PH Confession</p>
                         </a>

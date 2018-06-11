@@ -14,6 +14,8 @@ function category() {
 	$cat[8] = 'My wild experience';
 	$cat[9] = 'A regret';
 	$cat[10] = 'Just saying';
+	$cat[11] = 'Joke time';
+	$cat[12] = 'Scary AF';
 	return $cat;
 }
 
@@ -30,6 +32,8 @@ function button_color() {
 	$head_color[8] = 'background:#e91e63;color:white;';
 	$head_color[9] = 'background:#f16695;color:white;';
 	$head_color[10] = 'background:#9c27b0;color:white;';
+	$head_color[11] = 'background:#0ab3c7;color:white;';
+	$head_color[12] = 'background:#e94440;color:white;';
 	return $head_color;
 }
 
