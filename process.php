@@ -58,10 +58,11 @@ function login()
 
 	if ($result){
 		$_SESSION['alias_session'] = $alias;
-		header('Location: index.php');
+		$last_link = (isset($_SESSION['last_link']) && $_SESSION['last_link'] != '') ? $_SESSION['last_link'] : 'index.php';
+		header('Location: '.$last_link);
 	}
 	else {
-			header('Location: index.php?view=login&error=true');
+			header('Location: index.php?view=login&error=Username or password not matched!');
 	}
 }
 
@@ -87,7 +88,8 @@ function register()
 
 			$_SESSION['alias_session'] = $alias;
 
-			header('Location: index.php');
+			$last_link = (isset($_SESSION['last_link']) && $_SESSION['last_link'] != '') ? $_SESSION['last_link'] : 'index.php';
+			header('Location: '.$last_link);
 	}
 }
 
@@ -101,8 +103,11 @@ function confess()
 {
 
 		$confession = confession();
-		$confession->obj = $_POST;
 		$confession->obj['alias'] = $_SESSION['alias_session'];
+		$confession->obj['category'] = $_POST['category'];
+		$confession->obj['title'] = $_POST['title'];
+		$confession->obj['message'] = $_POST['message'];
+		$confession->obj['location'] = $_POST['location'];
 		$confession->obj['datetime'] = 'NOW()';
 		$confession->obj['lastChange'] = 'NOW()';
 		$confession->create();
@@ -159,7 +164,7 @@ function contact_us()
 {
 	$email=$_POST['email'];
 	$message=$_POST['message'];
-	$message = 'From: '.$email.', <br>'.$message;
+	$message = 'From: '.$_SESSION['alias_session'].', '.$email.', <br>'.$message;
 	sendEmail('phconfession2018@gmail.com', $message);
 
 	header('Location: index.php');

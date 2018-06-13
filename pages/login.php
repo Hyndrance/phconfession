@@ -10,7 +10,7 @@
         <button type="button" class="close" data-dismiss="alert" aria-label="Close" onclick="close_notif();">
             <i class="material-icons">close</i>
         </button>
-        <span data-notify="message">Username or password not matched!</span>
+        <span data-notify="message"><?=$error;?></span>
     </div>
   <?php }?>
 

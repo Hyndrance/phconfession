@@ -1,8 +1,10 @@
 <?php
 if(!isset($_SESSION["alias_session"]))
 {
-		header('Location: index.php?view=login');
+		$_SESSION["last_link"] = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+		header('Location: index.php?view=login&error=Please login to see the page');
  }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -131,6 +133,7 @@ if(!isset($_SESSION["alias_session"]))
                                 </button>
                             </div>
                         </form>
+												<ul class="navbar-nav"></ul>
                     </div>
                 </div>
             </nav>

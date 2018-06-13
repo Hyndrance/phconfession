@@ -1,3 +1,4 @@
+<script src='https://www.google.com/recaptcha/api.js'></script>
 <div class="col-md-12">
     <div class="card">
         <div class="card-header card-header-primary" style="<?=button_color()[6]?>">
@@ -43,9 +44,21 @@
                       </div>
                     </div>
                 </div>
+                <div class="row">
+                      <div  style="margin:auto;" class="g-recaptcha" data-sitekey="6Le4vV4UAAAAADP8Y7f9FHJ1kW8rj7bYwyJDiqFn"></div>
+                </div>
                 <button type="submit" class="btn btn-primary pull-right"  style="<?=button_color()[6]?>">Submit</button>
                 <div class="clearfix"></div>
             </form>
         </div>
     </div>
 </div>
+<script>
+window.onload = function() {
+    var $recaptcha = document.querySelector('#g-recaptcha-response');
+
+    if($recaptcha) {
+        $recaptcha.setAttribute("required", "required");
+    }
+};
+</script>
