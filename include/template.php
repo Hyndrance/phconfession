@@ -26,7 +26,8 @@ if(!isset($_SESSION["alias_session"]))
     <!-- Documentation extras -->
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="include/templates/assets/assets-for-demo/demo.css" rel="stylesheet" />
-    <!-- iframe removal -->
+    <!-- This is for recaptcha -->
+		<script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 
 <body class="">
