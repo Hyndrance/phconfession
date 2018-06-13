@@ -32,21 +32,23 @@ $category_name = category();
 	</div>
 
   <div class="card card-plain">
-          <ul style="color:black;text-align:justify">
+          <ul style="color:black; padding-left: 0px !important;">
             <?php foreach(comment()->list("cId=$Id") as $row) {?>
-              <li> <div class="timeline-heading">
+              <li style="list-style-type:none; margin-bottom: 10px; background-color: #f5f5f5; padding: 10px; border-radius: 5px;"> <div class="timeline-heading">
                 <span class="badge badge-pill badge-success"><?=$row->alias;?></span>
-								<br><span style="color:gray;font-style:italic;font-size:12px;"><?=timeElapse($row->datetime);?></span>
-              </div> <?=$row->comment;?></li>
+								<span style="color:gray;font-style:italic;font-size:12px; "><?=timeElapse($row->datetime);?></span>
+              </div> <?=$row->comment;?>
+							<br>
+							</li>
             <?php } ?>
           </ul>
 
 					<form method="post" action="process.php?action=comment&id=<?=$conf->Id;?>" autocomplete="off">
               <div class="col-md-12">
-                  <div class="form-group">
+                  <div class="form-group" style="background-color:#f9f9f9; padding: 15px; border-radius: 5px; margin-bottom: 10px;">
                       <label class="bmd-label-floating">Leave a comment here</label>
-                      <input type="text" id="comment" name="comment" class="form-control" required>
+                      <input type="text" id="comment" name="comment" class="form-control" required/>
+											<button type="submit" class="btn btn-primary"  style="<?=button_color()[6]?> margin-top: 15px;">Post</button>
                   </div>
-									<button type="submit" class="btn btn-primary pull-right"  style="<?=button_color()[6]?>">Submit Comment</button>
               </div>
   </div>
