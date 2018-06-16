@@ -32,13 +32,13 @@ $head_color = button_color();
         </div>
         <div class="card-footer">
             <?php if (relate()->count("cId=$row->Id and alias='$alias'") == 0) {?>
-              <div class="stats" id="onclick_<?=$row->Id;?>" onclick="loadDoc_<?=$row->Id;?>()">
+              <div class="stats" id="onclick_<?=$row->Id;?>" onclick="relateFun_<?=$row->Id;?>()">
                     <i class="material-icons" id="icon_<?=$row->Id;?>">favorite_border</i>
                     <span id="relate_<?=$row->Id;?>"><?=relate()->count("cId=$row->Id");?> </span>&nbsp;Relates
                 </div>
             <?php } else { ?>
               <div class="stats">
-                  <i class="material-icons">favorite</i>
+                  <i class="material-icons" style="color:red;">favorite</i>
                   <span id="relate_<?=$row->Id;?>"><?=relate()->count("cId=$row->Id");?> </span>&nbsp;Relates
               </div>
             <?php } ?>
@@ -56,7 +56,7 @@ $head_color = button_color();
     </div>
 </div>
  <script>
-     function loadDoc_<?=$row->Id?>() {
+     function relateFun_<?=$row->Id?>() {
        var xhttp = new XMLHttpRequest();
          xhttp.open("GET", "process.php?action=add_relate&id=<?=$row->Id?>", true);
          xhttp.send();
@@ -66,10 +66,12 @@ $head_color = button_color();
          document.getElementById("relate_<?=$row->Id;?>").textContent= Number(relate) + 1;
          // Add one relate
          document.getElementById("icon_<?=$row->Id;?>").textContent= 'favorite';
+         // Add one relate
+         document.getElementById("icon_<?=$row->Id;?>").style= 'color:red;';
          // disable onclick
          document.getElementById("onclick_<?=$row->Id;?>").onclick="";
      }
-      </script>
+ </script>
 <?php } ?>
 
 <script>

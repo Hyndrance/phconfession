@@ -6,6 +6,7 @@ $category_name = category();
 // Different colors
 $head_color = button_color();
 
+// Get data from DB
 function trending_list(){
   $db = Database::connect();
   $pdo = $db->prepare("SELECT confession.*, COUNT(relate.cId) AS views FROM confession LEFT JOIN relate ON confession.id = relate.cId GROUP BY confession.id ORDER BY views DESC");
@@ -41,13 +42,13 @@ function trending_list(){
         </div>
         <div class="card-footer">
             <?php if (relate()->count("cId=$row->Id and alias='$alias'") == 0) {?>
-              <div class="stats" id="onclick_<?=$row->Id;?>" onclick="loadDoc_<?=$row->Id;?>()">
+              <div class="stats" id="onclick_<?=$row->Id;?>" onclick="relateFun_<?=$row->Id;?>()">
                     <i class="material-icons" id="icon_<?=$row->Id;?>">favorite_border</i>
                     <span id="relate_<?=$row->Id;?>"><?=relate()->count("cId=$row->Id");?> </span>&nbsp;Relates
                 </div>
             <?php } else { ?>
               <div class="stats">
-                  <i class="material-icons">favorite</i>
+                  <i class="material-icons" style="color:red;">favorite</i>
                   <span id="relate_<?=$row->Id;?>"><?=relate()->count("cId=$row->Id");?> </span>&nbsp;Relates
               </div>
             <?php } ?>
@@ -65,20 +66,27 @@ function trending_list(){
     </div>
 </div>
  <script>
-     function loadDoc_<?=$row->Id?>() {
-       var xhttp = new XMLHttpRequest();
-         xhttp.open("GET", "process.php?action=add_relate&id=<?=$row->Id?>", true);
-         xhttp.send();
+     function relateFun_<?=$row->Id?>() {
+       var theUrl = 'process.php?action=add_relate&id=<?=$row->Id?>';
+       var xmlHttp = new XMLHttpRequest();
+        xmlHttp.onreadystatechange = function() {
+            if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+                callback(xmlHttp.responseText);
+        }
+        xmlHttp.open("GET", theUrl, true); // true for asynchronous
+        xmlHttp.send(null);
 
          var relate = document.getElementById("relate_<?=$row->Id;?>").innerHTML;
          // Add one relate
          document.getElementById("relate_<?=$row->Id;?>").textContent= Number(relate) + 1;
          // Add one relate
          document.getElementById("icon_<?=$row->Id;?>").textContent= 'favorite';
+         // Add one relate
+         document.getElementById("icon_<?=$row->Id;?>").style= 'color:red;';
          // disable onclick
          document.getElementById("onclick_<?=$row->Id;?>").onclick="";
      }
-      </script>
+ </script>
 <?php } ?>
 
 <script>

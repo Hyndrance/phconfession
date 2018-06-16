@@ -7,6 +7,14 @@ $action = $_GET['action'];
 
 switch ($action) {
 
+	case 'check_notification' :
+		check_notification();
+		break;
+
+	case 'delete_notification' :
+		delete_notification();
+		break;
+
 	case 'confess' :
 		confess();
 		break;
@@ -99,6 +107,24 @@ function update_last_change($Id){
 	$confession->update("Id='$Id'");
 }
 
+function check_notification(){
+	$notification = notification();
+	$notification->obj['status'] = 0;
+	$notification->update("recepient like '%".$_SESSION['alias_session']."'");
+
+	header('Location: index.php?view=notification');
+}
+
+function delete_notification(){
+
+	$id = $_GET["id"];
+	$confessionId = $_GET["confessionId"];
+	$commentId = $_GET["commentId"];
+	notification()->delete("id=$id");
+
+	header('Location: index.php?view=display&id='.$confessionId.'#'.$commentId);
+}
+
 function confess()
 {
 
@@ -145,13 +171,32 @@ function add_relate()
 function add_comment()
 {
 	$Id=$_GET['id'];
+	$alias = $_SESSION['alias_session'];
 
 	$comment = comment();
 	$comment->obj['cId'] = $Id;
-	$comment->obj['alias'] = $_SESSION['alias_session'];
+	$comment->obj['alias'] = $alias;
 	$comment->obj['comment'] = $_POST['comment'];
 	$comment->obj['datetime'] = "NOW()";
 	$comment->create();
+
+	$lastComment = comment()->get("alias='$alias' order by Id desc limit 1");
+
+	// Notify mentioned alias
+	$list = explode(" ", $_POST['comment']);
+	foreach ($list as $item){
+		if (strpos($item, '@') !== false) {
+			$notification = notification();
+			$notification->obj['recepient'] = $item;
+			$notification->obj['message'] = "You have been mentioned by ".$_SESSION['alias_session']." in a comment";
+			$notification->obj['confessionId'] = $Id;
+			$notification->obj['commentId'] = $lastComment->Id;
+			$notification->obj['type'] = $item;
+			$notification->obj['status'] = "1";
+			$notification->obj['datetime'] = "NOW()";
+			$notification->create();
+		}
+	}
 
 	// update last change
 	update_last_change($Id);

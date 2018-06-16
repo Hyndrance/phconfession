@@ -89,6 +89,19 @@ if(!isset($_SESSION["alias_session"]))
                     </li>
 
                     <li class="nav-item">
+                        <a class="nav-link" href="process.php?action=check_notification">
+                            <i class="material-icons">notification_important</i>
+                            <p>Notification
+															<?php if (notification()->count("recepient like '%".$_SESSION['alias_session']."' and status='1' order by Id desc")){ ?>
+																<span style="background:red;color:white;border-radius:5px;padding:1px;">
+																	<?=notification()->count("recepient like '%".$_SESSION['alias_session']."' and status='1' order by Id desc");?>
+															</span>
+														<?php } ?>
+													</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
                         <a class="nav-link" href="index.php?view=about">
                             <i class="material-icons">touch_app</i>
                             <p>About PH Confession</p>

@@ -13,6 +13,12 @@ switch ($view) {
 		$template	= 'include/template.php';
 		break;
 
+	case 'notification' :
+		$title = "";
+		$content 	= 'pages/notification.php';
+		$template	= 'include/template.php';
+		break;
+
 	case 'testing' :
 		$title = "";
 		$content 	= 'pages/testing.php';
