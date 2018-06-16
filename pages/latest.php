@@ -92,24 +92,21 @@ $head_color = button_color();
 
 <script>
 $(function () {
-  $("span").slice(0, 9).addClass('display');
-  $("#loadMore").on('click', function (e) {
-      e.preventDefault();
-      $("span:hidden").slice(0, 9).addClass('display');
-      if ($("span:hidden").length == 0) {
-          $("#load").fadeOut('slow');
-      }
-      $('html,body').animate({
-          scrollTop: $(this).offset().top
-      }, 1500);
-  });
+    $("span").slice(0, 9).addClass('display');
+    $("#loadMore").on('click', function (e) {
+        e.preventDefault();
+        $("span:hidden").slice(0, 9).addClass('display');
+        if ($("span:hidden").length == 0) {
+            $("#load").fadeOut('slow');
+        }
+    });
 });
 
 $(window).scroll(function () {
-  if ($(this).scrollTop() > 50) {
-      $('.totop a').fadeIn();
-  } else {
-      $('.totop a').fadeOut();
-  }
+    if ($(this).scrollTop() > 50) {
+        $('.totop a').fadeIn();
+    } else {
+        $('.totop a').fadeOut();
+    }
 });
 </script>
