@@ -166,9 +166,30 @@ function add_relate()
 	// Get confession detail
 	$confession = confession()->get("Id=$Id");
 
-	// Create $notification
+	// Create notification to the one who confested
 	$message = $_SESSION['alias_session']." can relate to your confession";
 	__create_notification($confession->alias, $Id, 0, $message);
+
+	// initial alias
+	$currentAlias = "";
+
+	// Create notification to all the ones who relates to this confessions
+	$message2 = $_SESSION['alias_session']." can relate to the confession you also have related";
+	foreach(relate()->list("cId=$Id order by alias") as $item){
+		if ($item->alias != $currentAlias){
+			$currentAlias = $item->alias;
+			__create_notification($item->alias, $Id, 0, $message2);
+		}
+	}
+
+	// Create notification to all the ones who commented to this confessions
+	$message3 = $_SESSION['alias_session']." can relate to the confession you have commented";
+	foreach(comment()->list("cId=$Id order by alias") as $item){
+			if ($item->alias != $currentAlias){
+				$currentAlias = $item->alias;
+				__create_notification($item->alias, $Id, 0, $message3);
+			}
+	}
 
 	// update last change
 	__update_last_change($Id);
@@ -201,9 +222,30 @@ function add_comment()
 	// Get confession detail
 	$confession = confession()->get("Id=$Id");
 
-	// Create $notification
+	// Create notification to the creator of confession
 	$message = $_SESSION['alias_session']." has commented on your confession";
 	__create_notification($confession->alias, $Id, $lastComment->Id, $message);
+
+	// initial alias
+	$currentAlias = "";
+
+	// Create notification to all the ones who relates to this confessions
+	$message2 = $_SESSION['alias_session']." has commented to the confession you have related";
+	foreach(relate()->list("cId=$Id order by alias") as $item){
+		if ($item->alias != $currentAlias){
+			$currentAlias = $item->alias;
+			__create_notification($item->alias, $Id, 0, $message2);
+		}
+	}
+
+	// Create notification to all the ones who commented to this confessions
+	$message3 = $_SESSION['alias_session']." has commented to the confession you have also commented";
+	foreach(comment()->list("cId=$Id order by alias") as $item){
+		if ($item->alias != $currentAlias){
+			$currentAlias = $item->alias;
+			__create_notification($item->alias, $Id, 0, $message3);
+		}
+	}
 
 	// update last change
 	__update_last_change($Id);
