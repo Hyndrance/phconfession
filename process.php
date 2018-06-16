@@ -101,7 +101,7 @@ function register()
 	}
 }
 
-function update_last_change($Id){
+function __update_last_change($Id){
 	$confession = confession();
 	$confession->obj['lastChange'] = 'NOW()';
 	$confession->update("Id='$Id'");
@@ -163,8 +163,15 @@ function add_relate()
 	$relate->obj['alias'] = $_SESSION['alias_session'];
 	$relate->create();
 
+	// Get confession detail
+	$confession = confession()->get("Id=$Id");
+
+	// Create $notification
+	$message = $_SESSION['alias_session']." can relate to your confession";
+	__create_notification($confession->alias, $Id, 0, $message);
+
 	// update last change
-	update_last_change($Id);
+	__update_last_change($Id);
 
 }
 
@@ -186,22 +193,36 @@ function add_comment()
 	$list = explode(" ", $_POST['comment']);
 	foreach ($list as $item){
 		if (strpos($item, '@') !== false) {
-			$notification = notification();
-			$notification->obj['recepient'] = $item;
-			$notification->obj['message'] = "You have been mentioned by ".$_SESSION['alias_session']." in a comment";
-			$notification->obj['confessionId'] = $Id;
-			$notification->obj['commentId'] = $lastComment->Id;
-			$notification->obj['type'] = $item;
-			$notification->obj['status'] = "1";
-			$notification->obj['datetime'] = "NOW()";
-			$notification->create();
+			$message = "You have been mentioned by ".$_SESSION['alias_session']." in a comment";
+			__create_notification($item, $Id, $lastComment->Id, $message);
 		}
 	}
 
+	// Get confession detail
+	$confession = confession()->get("Id=$Id");
+
+	// Create $notification
+	$message = $_SESSION['alias_session']." has commented on your confession";
+	__create_notification($confession->alias, $Id, $lastComment->Id, $message);
+
 	// update last change
-	update_last_change($Id);
+	__update_last_change($Id);
 
 	header('Location: index.php?view=display&id='.$Id);
+
+}
+
+function __create_notification($receipient, $confessionId, $commentId, $message){
+
+	$notification = notification();
+	$notification->obj['recepient'] = $receipient;
+	$notification->obj['message'] = $message;
+	$notification->obj['confessionId'] = $confessionId;
+	$notification->obj['commentId'] = $commentId;
+	$notification->obj['type'] = $receipient;
+	$notification->obj['status'] = "1";
+	$notification->obj['datetime'] = "NOW()";
+	$notification->create();
 
 }
 
