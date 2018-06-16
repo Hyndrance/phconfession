@@ -15,7 +15,8 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label class="bmd-label-floating">Select Category</label>
-                        <select class="form-control" name="category">
+                        <select class="form-control" name="category" required>
+                            <option value="">--Select Category--</option>
                           <?php foreach(category() as $key => $value) {
                           ?>
                             <option value="<?=$key?>"><?=$value;?></option>

@@ -1,3 +1,12 @@
+<style>
+span {
+    display:none;
+}
+span.display {
+	display: inline-block;
+}
+</style>
+
 <?php
 $alias = $_SESSION['alias_session'];
 $c = (isset($_GET['c']) && $_GET['c'] != '') ? 'and category="' . $_GET['c'] .'"' : '';
@@ -9,11 +18,12 @@ $category_name = category();
 $head_color = button_color();
 
 ?>
-<?php foreach(confession()->list("Id!=0 $c $s order by lastChange desc") as $row) {
+<?php
+ foreach(confession()->list("Id!=0 $c $s order by lastChange desc") as $row) {
   // This is to limit the message and add ...
   $limitMessage = strlen($row->message) > 200 ? substr($row->message,0,200)."..." : $row->message;
 ?>
-  <div class="col-lg-4 col-md-6 col-sm-6" id="your_div">
+  <span class="col-lg-4 col-md-6 col-sm-6" id="your_div">
       <div class="card card-stats">
           <div class="card-header card-header-success card-header-icon"
               onclick="location.href='process.php?action=view&id=<?=$row->Id;?>'">
@@ -56,31 +66,54 @@ $head_color = button_color();
               </div>
           </div>
       </div>
-  </div>
-   <script>
-       function relateFun_<?=$row->Id?>() {
-         var xhttp = new XMLHttpRequest();
-           xhttp.open("GET", "process.php?action=add_relate&id=<?=$row->Id?>", true);
-           xhttp.send();
+       <script>
+           function relateFun_<?=$row->Id?>() {
+             var xhttp = new XMLHttpRequest();
+               xhttp.open("GET", "process.php?action=add_relate&id=<?=$row->Id?>", true);
+               xhttp.send();
 
-           var relate = document.getElementById("relate_<?=$row->Id;?>").innerHTML;
-           // Add one relate
-           document.getElementById("relate_<?=$row->Id;?>").textContent= Number(relate) + 1;
-           // Add one relate
-           document.getElementById("icon_<?=$row->Id;?>").textContent= 'favorite';
-           // Add one relate
-           document.getElementById("icon_<?=$row->Id;?>").style= 'color:red;';
-           // disable onclick
-           document.getElementById("onclick_<?=$row->Id;?>").onclick="";
-       }
-   </script>
-<?php } ?>
+               var relate = document.getElementById("relate_<?=$row->Id;?>").innerHTML;
+               // Add one relate
+               document.getElementById("relate_<?=$row->Id;?>").textContent= Number(relate) + 1;
+               // Add one relate
+               document.getElementById("icon_<?=$row->Id;?>").textContent= 'favorite';
+               // Add one relate
+               document.getElementById("icon_<?=$row->Id;?>").style= 'color:red;';
+               // disable onclick
+               document.getElementById("onclick_<?=$row->Id;?>").onclick="";
+           }
+       </script>
+  </span>
+<?php }
+// End loop
+?>
+
+<div class="col-lg-12 col-md-6 col-sm-6" id="your_div">
+  <a href="#" id="loadMore" class="btn btn-primary pull-right" style="<?=button_color()[6]?>">Load More</a>
+</div>
+
+<script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
 
 <script>
-$(window).scroll(function() {
-    if($(window).scrollTop() == $(document).height() - $(window).height()) {
-           // ajax call get data from server and append to the div
-           new_element.hide().appendTo('#your_div').fadeIn(); $(window).scrollTop($(window).scrollTop()-1);
+$(function () {
+    $("span").slice(0, 9).addClass('display');
+    $("#loadMore").on('click', function (e) {
+        e.preventDefault();
+        $("span:hidden").slice(0, 9).addClass('display');
+        if ($("span:hidden").length == 0) {
+            $("#load").fadeOut('slow');
+        }
+        $('html,body').animate({
+            scrollTop: $(this).offset().top
+        }, 1500);
+    });
+});
+
+$(window).scroll(function () {
+    if ($(this).scrollTop() > 50) {
+        $('.totop a').fadeIn();
+    } else {
+        $('.totop a').fadeOut();
     }
 });
 </script>
