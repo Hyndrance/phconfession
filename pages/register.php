@@ -24,7 +24,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label class="bmd-label-floating">Create an Alias:</label>
+                            <label class="bmd-label-floating">Create an Alias: <br><i>(Please use only one word)</i></label>
                             <input type="text" name="alias" class="form-control" required>
                         </div>
                     </div>

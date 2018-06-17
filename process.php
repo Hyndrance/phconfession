@@ -80,9 +80,13 @@ function register()
 	$password = $_POST['password'];
 	$password2 = $_POST['password2'];
 
+	// Check alias
 	$aliasExists = user()->get("alias='$alias'");
 
-	if ($aliasExists){
+	if (strpos($alias, ' ')==true){
+		header('Location: index.php?view=register&error=Please do not use more than one word');
+	}
+	else if ($aliasExists){
 		header('Location: index.php?view=register&error=Alias already exists');
 	}
 	else if ($password != $password2){

@@ -92,7 +92,7 @@ $head_color = button_color();
 
 <script>
 $(function () {
-    $("span").slice(0, 9).addClass('display');
+    $("span").slice(0, 18).addClass('display');
     $("#loadMore").on('click', function (e) {
         e.preventDefault();
         $("span:hidden").slice(0, 9).addClass('display');
