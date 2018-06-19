@@ -10,6 +10,12 @@ if(!isset($_SESSION["alias_session"]))
 <html lang="en">
 
 <head>
+		<meta property="og:url"                content="https://phconfession.com" />
+		<meta property="og:type"               content="article" />
+		<meta property="og:title"              content="When Great Minds Don’t Think Alike" />
+		<meta property="og:description"        content="How much does culture influence creative thinking?" />
+		<meta property="og:image"              content="https://phconfession.com/include/img/test.png" />
+
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
