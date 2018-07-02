@@ -15,6 +15,7 @@ function category() {
 	$cat[10] = 'Just saying';
 	$cat[11] = 'Joke time';
 	$cat[12] = 'Scary AF';
+	$cat[13] = '3 AM Thought';
 	return $cat;
 }
 

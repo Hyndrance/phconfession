@@ -8,16 +8,16 @@ span.display {
 </style>
 
 <?php
-$alias = $_SESSION['alias_session'];
-$c = (isset($_GET['c']) && $_GET['c'] != '') ? 'and category="' . $_GET['c'] .'"' : '';
-$s = (isset($_GET['s']) && $_GET['s'] != '') ? 'and (title like "%' . $_GET['s'] .'%" or alias like "%' . $_GET['s'] .'%" or message like "%' . $_GET['s'] .'%")' : '';
+    $alias = $_SESSION['alias_session'];
+    $c = (isset($_GET['c']) && $_GET['c'] != '') ? 'and category="' . $_GET['c'] .'"' : '';
+    $s = (isset($_GET['s']) && $_GET['s'] != '') ? 'and (title like "%' . $_GET['s'] .'%" or alias like "%' . $_GET['s'] .'%" or message like "%' . $_GET['s'] .'%")' : '';
 
-// Category name
-$category_name = category();
-// Different colors
-$head_color = button_color();
-
+    // Category name
+    $category_name = category();
+    // Different colors
+    $head_color = button_color();
 ?>
+
 <?php
  foreach(confession()->list("Id!=0 $c $s order by lastChange desc") as $row) {
   // This is to limit the message and add ...

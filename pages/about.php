@@ -1,4 +1,3 @@
-
 <div class="card card-testimonial">
 		<div class="icon">
 			<i class="material-icons">group</i>
@@ -14,7 +13,6 @@
 						good or bad, to make you stronger and move forward. PH Confession was created for this sole purpose and to
 						simply allow you to let it out.
 				</p>
-
 				<h5 class="card-title">
 	        <b>Privacy</b>
 					</h5>
@@ -27,7 +25,6 @@
 						This platform is primarily intended for users from the Philippines. However we certainly allow everyone
 						(yes literally everyone) to use and enjoy using our service.
 					</p>
-
 				<h5 class="card-title">
 	        <b>DISCLAIMER</b>
 					</h5>
@@ -40,7 +37,6 @@
 						 negative situation so think before you post your confessions. As always our ultimate reminder is "confess
 						 responsibly".
 					</p>
-
 		</div>
     <div class="card-footer">
     </div>
