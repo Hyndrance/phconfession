@@ -7,6 +7,10 @@ $list["notification"] = notification()->list();
 $list["relate"] = relate()->list();
 $list["user"] = user()->list();
 
-echo json_encode($list);
+$auth = (isset($_POST['auth']) && $_POST['auth'] != '') ? $_POST['auth'] : '';
+
+if ($auth=="phconfession123456789sunsetcity"){
+  echo json_encode($list);
+}
 
 ?>
