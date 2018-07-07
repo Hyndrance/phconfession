@@ -38,23 +38,26 @@
 
 		<style>
 		.navBar {
-		  background-color: #ff802a;
+			/* background-color: #ff802a; */
 			position: fixed;
 		  top: 0;
 		  width: 100%;
 			height: 50px;
 			color: #FFFFFF;
 		}
+		.orange {
+			background-color: #ff802a;
+		}
 		</style>
 </head>
 
 <body class="">
     <div class="wrapper">
-        <div class="main" style="background:#eeeeee;">
+        <div class="main">
             <!-- Navbar -->
             <nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute fixed-top">
                 <div class="container-fluid navBar">
-                    <div class="navbar-wrapper">
+                    <div class="navbar-wrapper" style="color:black;font-weight:bold;">
                         <img src="include/img/icon.png" width="40px"> &nbsp;&nbsp;&nbsp;
 												PH Confession
                     </div>
@@ -67,10 +70,10 @@
                     <div class="collapse navbar-collapse justify-content-end" id="navigation">
 
 											<ul class="navbar-nav">
-												<li class="nav-item"><button class="btn">FAQ</button>&nbsp;&nbsp;&nbsp;
-												<li class="nav-item"><button class="btn">About Us</button>&nbsp;&nbsp;&nbsp;
-												<li class="nav-item"><button class="btn">Blog</button>&nbsp;&nbsp;&nbsp;
-												<li class="nav-item"><button onclick="location.href='?view=login'" class="btn">Log in</button>&nbsp;&nbsp;&nbsp;
+												<li class="nav-item"><button class="btn orange">FAQ</button>&nbsp;&nbsp;&nbsp;
+												<li class="nav-item"><button class="btn orange">About Us</button>&nbsp;&nbsp;&nbsp;
+												<li class="nav-item"><button class="btn orange">Blog</button>&nbsp;&nbsp;&nbsp;
+												<li class="nav-item"><button onclick="location.href='?view=login'" class="btn orange">Log in</button>&nbsp;&nbsp;&nbsp;
 											</ul>
                     </div>
                 </div>
