@@ -59,7 +59,7 @@
             <!-- Navbar -->
             <nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute fixed-top">
                 <div class="container-fluid navBar">
-                    <div class="navbar-wrapper">
+                    <div class="navbar-wrapper" onclick="location.href='?view=home'">
                         <img src="include/img/icon.png" width="40px"> &nbsp;&nbsp;&nbsp;
 												PH Confession
                     </div>
@@ -73,7 +73,7 @@
 
 											<ul class="navbar-nav">
 												<li class="nav-item"><button class="btn orange">FAQ</button>&nbsp;&nbsp;&nbsp;
-												<li class="nav-item"><button class="btn orange">About Us</button>&nbsp;&nbsp;&nbsp;
+												<li class="nav-item"><button onclick="location.href='?view=home_aboutus'" class="btn orange">About Us</button>&nbsp;&nbsp;&nbsp;
 												<li class="nav-item"><button class="btn orange">Blog</button>&nbsp;&nbsp;&nbsp;
 												<li class="nav-item"><button onclick="location.href='?view=login'" class="btn orange">Log in</button>&nbsp;&nbsp;&nbsp;
 											</ul>
