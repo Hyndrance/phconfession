@@ -1,6 +1,6 @@
 
 	 <div class="col-md-9">
-		 	<div style="min-height:350px">
+		 	<div style="min-height:400px">
 				<?php include "home_main.php"?>
 			</div>
 			<div>
