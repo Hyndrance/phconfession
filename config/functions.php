@@ -17,6 +17,15 @@ function category() {
 	$cat[12] = 'Scary AF';
 	$cat[13] = '3 AM Thought';
 	return $cat;
+	/*
+	red 6 9
+	orange 5 7
+	yellow 8 10
+	green 1 2
+	blue 3 4
+	indigo 11 12
+	violet
+	*/
 }
 
 // button colers

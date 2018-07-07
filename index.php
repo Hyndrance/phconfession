@@ -77,6 +77,12 @@ switch ($view) {
 		$template	= 'include/template.php';
 		break;
 
+	case 'home' :
+		$title = "My Confessions";
+		$content 	= 'pages/home.php';
+		$template	= 'include/templateNoAuth.php';
+		break;
+
 	default :
 		$title = "Hot Confessions";
 		$content 	= 'pages/hot.php';

@@ -1,11 +1,3 @@
-<?php
-if(!isset($_SESSION["alias_session"]))
-{
-		$_SESSION["last_link"] = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-		header('Location: index.php?view=home&error=Please login to see the page');
- }
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,7 +39,7 @@ if(!isset($_SESSION["alias_session"]))
 		<style>
 		.navBar {
 		  background-color: #ff802a;
-			margin-top: -10px;
+			position: fixed;
 		  top: 0;
 		  width: 100%;
 			height: 50px;
@@ -58,105 +50,13 @@ if(!isset($_SESSION["alias_session"]))
 
 <body class="">
     <div class="wrapper">
-        <div class="sidebar" data-color="purple" data-background-color="white" data-image="include/templates/assets/img/sidebar-1.jpg">
-            <!--
-        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
-
-        Tip 2: you can also add an image using data-image tag
-    -->
-            <div class="logo">
-                <a href="index.php" class="simple-text logo-normal">
-                    <img src="include/img/header.png" height="35px">
-                </a>
-            </div>
-            <div class="sidebar-wrapper">
-                <ul class="nav">
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php">
-                            <i class="material-icons">whatshot</i>
-                            <p>Hot</p>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php?view=trending">
-                            <i class="material-icons">trending_up</i>
-                            <p>Trending</p>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php?view=latest">
-                            <i class="material-icons">open_in_new</i>
-                            <p>Latest</p>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php?view=myconfessions">
-                            <i class="material-icons">drafts</i>
-                            <p>My Confessions</p>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php?view=category">
-                            <i class="material-icons">dashboard</i>
-                            <p>Categories</p>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php?view=confess">
-                            <i class="material-icons">create</i>
-                            <p>Write your confession</p>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="process.php?action=check_notification">
-                            <i class="material-icons">notification_important</i>
-                            <p>Notification
-															<?php if (notification()->count("recepient like '%".$_SESSION['alias_session']."' and status='1' order by Id desc")){ ?>
-																<span style="background:red;color:white;border-radius:5px;padding:1px;">
-																	<?=notification()->count("recepient like '%".$_SESSION['alias_session']."' and status='1' order by Id desc");?>
-															</span>
-														<?php } ?>
-													</p>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php?view=about">
-                            <i class="material-icons">touch_app</i>
-                            <p>About PH Confession</p>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php?view=contactUs">
-                            <i class="material-icons">perm_phone_msg</i>
-                            <p>Contact Us</p>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="process.php?action=logout">
-                            <i class="material-icons">remove_circle</i>
-                            <p>Logout</p>
-                        </a>
-                    </li>
-
-                </ul>
-            </div>
-        </div>
-        <div class="main-panel">
+        <div class="main" style="background:#eeeeee;">
             <!-- Navbar -->
             <nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute fixed-top">
                 <div class="container-fluid navBar">
                     <div class="navbar-wrapper">
-                        <?=$title;?>
+                        <img src="include/img/icon.png" width="40px"> &nbsp;&nbsp;&nbsp;
+												PH Confession
                     </div>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="sr-only">Toggle navigation</span>
@@ -165,28 +65,25 @@ if(!isset($_SESSION["alias_session"]))
                         <span class="navbar-toggler-icon icon-bar"></span>
                     </button>
                     <div class="collapse navbar-collapse justify-content-end" id="navigation">
-                        <form class="navbar-form">
-                            <div class="input-group no-border">
-                                <input type="text" name="s" class="form-control" placeholder="Search...">
-                                <button type="submit" class="btn btn-white btn-round btn-just-icon">
-                                    <i class="material-icons">search</i>
-                                </button>
-                            </div>
-                        </form>
-												<ul class="navbar-nav"></ul>
+
+											<ul class="navbar-nav">
+												<li class="nav-item"><button class="btn">FAQ</button>&nbsp;&nbsp;&nbsp;
+												<li class="nav-item"><button class="btn">About Us</button>&nbsp;&nbsp;&nbsp;
+												<li class="nav-item"><button class="btn">Blog</button>&nbsp;&nbsp;&nbsp;
+												<li class="nav-item"><button onclick="location.href='?view=login'" class="btn">Log in</button>&nbsp;&nbsp;&nbsp;
+											</ul>
                     </div>
                 </div>
             </nav>
             <!-- End Navbar -->
             <div class="content">
+								<br><br>
                 <div class="container-fluid">
 									<!--End here-->
-											 <?php include "message.php";?>
+											 <!-- <?php include "message.php";?> -->
 									<!--End here-->
                     <div class="row">
-											<!--End here-->
-											     <?php include $content;?>
-											<!--End here-->
+												<?php include $content;?>
                     </div>
                 </div>
             </div>
@@ -196,22 +93,32 @@ if(!isset($_SESSION["alias_session"]))
                         <ul>
                             <li>
                                 <a href="">
-                                    Hyndrance
+                                    Terms and Condition
                                 </a>
                             </li>
                             <li>
                                 <a href="">
-                                    About Us
+                                    Privacy Policy
                                 </a>
                             </li>
                             <li>
                                 <a href="">
-                                    Blog
+                                    Contact Us
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/PHconfessioncom-915413495303290/">
+																		<img src="include/img/fb_icon.png" height="50px">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/PHconfession_">
+																		<img src="include/img/twitter_icon.png" height="50px">
                                 </a>
                             </li>
                             <li>
                                 <a href="">
-                                    Licenses
+																		<img src="include/img/insta_icon.png" height="50px">
                                 </a>
                             </li>
                         </ul>
@@ -220,8 +127,8 @@ if(!isset($_SESSION["alias_session"]))
                         &copy;
                         <script>
                             document.write(new Date().getFullYear())
-                        </script>, made with love by
-                        <a href="" target="_blank">Hyndrance</a> for a better web.
+                        </script>, made by
+                        <a href="" target="_blank">SunsetCity</a>.
                     </div>
                 </div>
             </footer>
