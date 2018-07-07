@@ -38,12 +38,14 @@
 
 		<style>
 		.navBar {
-			/* background-color: #ff802a; */
+			background-color: #FFFFFF;
+			box-shadow: #edeeef 0px 0px 0px 1px;
 			position: fixed;
 		  top: 0;
 		  width: 100%;
 			height: 50px;
-			color: #FFFFFF;
+			color: #000;
+			font-weight: bold;
 		}
 		.orange {
 			background-color: #ff802a;
@@ -57,7 +59,7 @@
             <!-- Navbar -->
             <nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute fixed-top">
                 <div class="container-fluid navBar">
-                    <div class="navbar-wrapper" style="color:black;font-weight:bold;">
+                    <div class="navbar-wrapper">
                         <img src="include/img/icon.png" width="40px"> &nbsp;&nbsp;&nbsp;
 												PH Confession
                     </div>
