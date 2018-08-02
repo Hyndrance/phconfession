@@ -7,8 +7,12 @@ $view = (isset($_GET['view']) && $_GET['view'] != '') ? $_GET['view'] : '';
 
 switch ($view) {
 
+	case 'login' :
+		$json = "login.php";
+		break;
+
 	case 'confess' :
-		$json = "";
+		$json = "confess.php";
 		break;
 
 	default :
