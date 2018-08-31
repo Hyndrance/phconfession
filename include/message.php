@@ -1,5 +1,5 @@
 <?php  if (isset($_SESSION['close_notif']) && ($_SESSION['close_notif'] = $_SESSION['alias_session']) ) {} else {?>
-<?php foreach(notification()->list("status=1 and recepient=''") as $row) {?>
+<?php foreach(notification()->list("status=1 and recepient='notification'") as $row) {?>
   <div class="alert alert-<?=$row->type;?> alert-with-icon" data-notify="container">
       <i class="material-icons" data-notify="icon">add_alert</i>
       <button type="button" class="close" data-dismiss="alert" aria-label="Close" onclick="close_notif();">
