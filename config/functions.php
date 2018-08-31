@@ -179,4 +179,50 @@ $message = "";
 return $message;
 }
 
+// ===========================================================================
+
+function send_fcm_notification($tokens, $body, $title){
+
+  $notification = array(
+            "body" => $body,
+            "title" => $title,
+                );
+
+  $url = "https://fcm.googleapis.com/fcm/send";
+  $fields = array(
+      'registration_ids' => $tokens,
+      'notification' => $notification
+  );
+
+  $headers = array(
+      'Authorization:key=AAAALOR4AxY:APA91bG8V30D34-rIykW9DgGwGmaOr9XfwUQr21eo91N5ZRHpYiygryTcLSgLSPmHcrAmsy9jB8KBNx4Sju6YMEVlGnLVDaX40E1iMr_0oOnHdQ-Kz497dOUUSHg8q9AJqcK2iNeumHL',
+      'Content-Type: application/json'
+  );
+
+  // Open connection
+  $ch = curl_init();
+
+  // Set the url, number of POST vars, POST data
+  curl_setopt($ch, CURLOPT_URL, $url);
+
+  curl_setopt($ch, CURLOPT_POST, true);
+  curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+  // Disabling SSL Certificate support temporarly
+  curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+
+  curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($fields));
+
+  // Execute post
+  $result = curl_exec($ch);
+  if ($result === FALSE) {
+      die('Curl failed: ' . curl_error($ch));
+  }
+
+  // Close connection
+  curl_close($ch);
+  return $result;
+}
+
 ?>

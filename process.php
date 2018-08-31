@@ -142,6 +142,16 @@ function confess()
 		$confession->obj['lastChange'] = 'NOW()';
 		$confession->create();
 
+		$receipient = array();
+		foreach (user()->list("fcmToken!=''") as $row) {
+				$receipient[] = $row->fcmToken;
+		}
+
+		$body = "New Confession by " . $_SESSION['alias_session'];
+		$title = $_POST['title'];
+
+		send_fcm_notification($receipient, $body, $title);
+
 		header('Location: index.php');
 }
 
